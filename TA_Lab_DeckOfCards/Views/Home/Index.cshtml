@@ -1,0 +1,11 @@
+﻿@model DrawCardsModel
+
+<h1>You've pulled @Model.cards.Length cards!</h1>
+
+@for (int i = 0; i < Model.cards.Length; i++)
+{
+    <p>@Model.cards[i].value of @Model.cards[i].suit</p>
+}
+
+<p>Try refreshing the page! You'll see each time you make a request to the deckofcards API, 5 new cards are drawn.</p>
+<p>You have @Model.remaining cards left in the deck! Want to see the JSON of this card deck? Here's the ID: @Model.deck_id</p>
