@@ -24,7 +24,9 @@ namespace TA_Lab_DeckOfCards.Models
             string JSON = reader.ReadToEnd();
 
             // convert the raw json string into an object (CardDeckModel) and return it
-            return JsonConvert.DeserializeObject<CardDeckModel>(JSON);
+            CardDeckModel cardDeck = JsonConvert.DeserializeObject<CardDeckModel>(JSON);
+            
+            return cardDeck;
         }
 
         public DrawCardsModel DrawCards(string deckId, int cardAmount)
@@ -41,7 +43,9 @@ namespace TA_Lab_DeckOfCards.Models
             string JSON = reader.ReadToEnd();
 
             // convert the raw json string into an object (DrawCardsModel) and return it
-            return JsonConvert.DeserializeObject<DrawCardsModel>(JSON);
+            DrawCardsModel drawnCards =  JsonConvert.DeserializeObject<DrawCardsModel>(JSON);
+
+            return drawnCards; // is it confusing to call this "drawnCards"? I like the past-tense... I'm thinking "cards that were drawn"
         }
     }
 }
