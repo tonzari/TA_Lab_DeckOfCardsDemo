@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace TA_Lab_DeckOfCards.Models
 {
+
+        // Curious where these models came from?? See the other class "CardDeckModel.cs"
+        // There are some comments there that describe how these classes were created
         public class DrawCardsModel
         {
             public bool success { get; set; }

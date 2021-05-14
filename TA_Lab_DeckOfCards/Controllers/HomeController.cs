@@ -11,14 +11,16 @@ namespace TA_Lab_DeckOfCards.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        
-        // We need to create an instance of the CardDAL. Why?
-        // So we can call the methods on it! We can call methods that make requests to the API,
+        // We need to create an instance of the CardDAL here. Why? Ask thyself... take a guess... :)
+        // So we can get access to its available class members!
+        // In this case, it's a couple methods we created that make requests to the API,
         // and our DAL will give us back objects we can actually use in our program.
-        // In this demo, we aren't creating any new views - we'll just use the Index (homepage)
+        // In this demo, we aren't creating any new views... let's keep it super simple
+        // ... we'll just use the Index action (homepage) See below.
 
         private readonly CardDAL _cardDal = new CardDAL();
+
+        private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
