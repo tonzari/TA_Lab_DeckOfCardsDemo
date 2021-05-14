@@ -19,10 +19,11 @@ namespace TA_Lab_DeckOfCards.Models
             // get and store response from api
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            // convert the raw JSON into a string
+            // convert the http response into a string of raw json
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string JSON = reader.ReadToEnd();
 
+            // convert the raw json string into an object (CardDeckModel) and return it
             return JsonConvert.DeserializeObject<CardDeckModel>(JSON);
         }
 
@@ -35,10 +36,11 @@ namespace TA_Lab_DeckOfCards.Models
             // get and store response from api
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            // convert the raw JSON into a string
+            // convert the http response into a string of raw json
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string JSON = reader.ReadToEnd();
 
+            // convert the raw json string into an object (DrawCardsModel) and return it
             return JsonConvert.DeserializeObject<DrawCardsModel>(JSON);
         }
     }
