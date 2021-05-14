@@ -16,7 +16,7 @@ namespace TA_Lab_DeckOfCards.Models
             string url = @$"https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
             HttpWebRequest request = WebRequest.CreateHttp(url);
 
-            // get and store response from api
+            // store response from api
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
             // convert the http response into a string of raw json
@@ -35,7 +35,7 @@ namespace TA_Lab_DeckOfCards.Models
             string url = @$"https://deckofcardsapi.com/api/deck/{deckId}/draw/?count={cardAmount}";
             HttpWebRequest request = WebRequest.CreateHttp(url);
 
-            // get and store response from api
+            // store response from api
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
             // convert the http response into a string of raw json
